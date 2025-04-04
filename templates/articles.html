@@ -27,24 +27,24 @@
          <div class="article content-block">
             <div class="article-name">
                 <div class="name-link">
-                    <a href="" class="article-a"><span>{{ article.title }}</span></a>
+                    <a href="" class="article-a"><span>{{ article.title }} {{ article.id }}</span></a>
                 </div>
 
             </div>
             <div class="article-body">
-                <p>{{ article.content }}</p>
+                <p>{{ article.get_excerpt }}</p>
             </div>
 
             <div class="article-footer">
                 <div class="article-footer-icon-and-values">
-                    <h4 class="article-footer-h">{{ article.likes }}</h4>
+                    <h4 class="article-footer-h">{{ article.get_total_likes }}</h4>
                     <a href="">
 
                         <img src="{% static 'FacebookLike.png' %}" alt="" class="article-footer-img">
                     </a>
                 </div>
                 <div class="article-footer-icon-and-values">
-                    <h4 class="article-footer-h">{{ article.dislikes }}</h4>
+                    <h4 class="article-footer-h">{{ article.get_total_dislikes }}</h4>
                     <a href="">
 
                         <img src="{% static 'ThumbsDown.png' %}" alt="" class="article-footer-img">
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="article-footer-icon-and-values">
-                    <h4 class="article-footer-h">1</h4>
+                    <h4 class="article-footer-h">{{ article.get_total_comments }}</h4>
                     <a href="">
 
                         <img src="{% static 'Speech_Bubble.png' %}" alt="" class="article-footer-img">

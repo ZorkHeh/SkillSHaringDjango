@@ -11,3 +11,8 @@ def articles(request):
     context = {'articles': articles}
 
     return render(request, "articles.html", context)
+
+def article(request, id):
+    article = Article.objects.get(pk=1)
+
+    return render(request, "article.html", {'article': article})

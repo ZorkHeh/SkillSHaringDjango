@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="individual-article-name content-block">
+        <h1>{{ article.title }}</h1>
+    </div>
+    <div class="individual-article-body content-block">
+        {{ article.content }}
+    </div>
+    {% for comment in article.get_comments %}
+    <div class="individual-article-comments content-block">
+        <div class="individual-article-comments-name">
+            <img src="{% static "Account.png" %}" alt="" class="individual-article-comments-user-img">
+            <h6>User</h6>
+        </div>
+        <div class="individual-article-comments-body">
+            <div>{{ comment.content }}</div>
+        </div>
+        <div class="individual-article-comments-footer">
+            <div class="individual-article-comments-name-footer-iconsvalues">
+                <h4 class="individual-article-comments-name-footer-iconsvalues-h">{{ comment.get_total_likes }}</h4>
+                <a href="">
+                    <img src="{% static 'FacebookLike.png' %}" alt="" class="individual-article-comments-footer-img">
+                </a>
+            </div>
+            <div class="individual-article-comments-name-footer-iconsvalues">
+                <h4 class="individual-article-comments-name-footer-iconsvalues-h">{{ comment.get_total_dislikes }}</h4>
+                <a href="">
+                    <img src="{% static 'ThumbsDown.png' %}" alt="" class="individual-article-comments-footer-img">
+                </a>
+            </div>
+
+            <div class="individual-article-comments-footer-date">
+                <img src="{% static 'Calendar.png' %}" alt="" class="individual-article-comments-footer-img">
+                <h4 class="individual-article-comments-footer-date-h">{{ comment.date }}</h4>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

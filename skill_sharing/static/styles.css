@@ -425,6 +425,8 @@ footer{
 
 .article-body{
     font-size: 1.5em;
+
+    height: 300px;
 }
 
 .article-footer{
