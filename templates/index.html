@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+     <div class="info content-block">
+
+        <div class="info-name">
+            <h1>Freelance Skill-Sharing Forum</h1>
+        </div>
+        <div class="info-body">
+            <h2>A hub for freelancers to connect, learn, and grow.</h2>
+            <h2>Why Join?</h2>
+            <h3> ✅ Skill Exchange – Learn & share expertise</h3>
+            <h3>✅ Job Board – Find & post freelance gigs</h3>
+            <h3> ✅ Portfolio Showcase – Get feedback on your work</h3>
+            <h3>✅ Networking – Connect with like-minded professionals</h3>
+            <h3>✅ Resources & Tips – Stay ahead in freelancing</h3>
+            <br>
+
+            <div class="info-body-join">
+                <h3>🚀 Join now and level up your freelance career!</h3>
+                <a href="{% url 'articles' %}">
+                    <div class="info-body-join-btn">
+                        Start for free
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="feedback content-block">
+        <div class="feedback-block">
+            <div class="feedback-block-user">
+                <img src="{% static 'Account.png' %}" alt="" class="feedback-block-user-img">
+                <h3>User</h3>
+            </div>
+            <div class="feedback-block-body">
+                <p>Great place to learn and network with other freelancers!</p>
+            </div>
+            <div class="feedback-block-footer">
+                <img src="{% static 'Calendar.png' %}" alt="" class="feedback-block-footer-img">
+                <h4 class="feedback-block-footer-date">15.15.2025</h4>
+            </div>
+
+        </div>
+        <div class="feedback-block">
+            <div class="feedback-block-user">
+                <img src="{% static 'Account.png' %}" alt="" class="feedback-block-user-img">
+                <h3>User</h3>
+            </div>
+            <div class="feedback-block-body">
+                <p>Found my first freelance gig here —highly recommended!</p>
+            </div>
+            <div class="feedback-block-footer">
+                <img src="{% static 'Calendar.png' %}" alt="" class="feedback-block-footer-img">
+                <h4 class="feedback-block-footer-date">15.15.2025</h4>
+            </div>
+
+        </div>
+        <div class="feedback-block">
+            <div class="feedback-block-user">
+                <img src="{% static 'Account.png' %}" alt="" class="feedback-block-user-img">
+                <h3>User</h3>
+            </div>
+            <div class="feedback-block-body">
+                <p>Helpful community and great resources for freelancers!</p>
+            </div>
+            <div class="feedback-block-footer">
+                <img src="{% static 'Calendar.png' %}" alt="" class="feedback-block-footer-img">
+                <h4 class="feedback-block-footer-date">15.15.2025</h4>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

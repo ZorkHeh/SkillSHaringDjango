@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+ <header>
+  <div class="logo">
+      <a href="{% url 'index' %}">
+            <img src="{% static 'logo.png' %}" alt="" class="logo-img">
+      </a>
+
+  </div>
+  <div class="menu">
+      <a href="{% url 'index' %}" class="menu-btn-a"><div class="menu-btn">home</div></a>
+      <a href="{% url 'articles' %}" class="menu-btn-a"><div class="menu-btn">articles</div></a>
+  </div>
+
+     {% if user.is_authenticated  %}
+        <div class="user">
+           <div class="user-logo">
+               <img src="{% static 'Account.png' %}" class="user-img">
+           </div>
+           <div class="user-info">{{ user.username }}</div>
+
+          </div>
+         <a href="" class="menu-btn-a"><div class="menu-btn">log out</div></a>
+
+     {% else %}
+         <div class="user-authentication">
+         <a href="">
+             <div class="user-authentication-btn user-authentication-btn-login">
+                 Log in
+             </div>
+         </a>
+         <a href="">
+             <div class="user-authentication-btn user-authentication-btn-signup">
+                 Sign up
+             </div>
+         </a>
+     </div>
+     {% endif %}
+
+ </header>
+<main>
+{% block content %}
+	
+{% endblock %}
+</main>
+<footer>
+    <div class="footer-main">
+        <div class="contact">
+            <p>Contact us</p>
+            <p>futurecompany@gmail.com</p>
+
+        </div>
+        <div class="links">
+            <a href=""><img src="{% static 'Facebook.png' %}" alt="" class="footer-link"></a>
+            <a href=""><img src="{% static 'Instagram.png' %}" alt="" class="footer-link"></a>
+            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><img src="{% static 'YouTube.png' %}" alt="" class="footer-link"></a>
+
+
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>© 2025 Future company</p>
+    </div>
+</footer>
+</body>
+</html>
