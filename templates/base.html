@@ -30,16 +30,16 @@
            <div class="user-info">{{ user.username }}</div>
 
           </div>
-         <a href="" class="menu-btn-a"><div class="menu-btn">log out</div></a>
+         <a href="{% url 'logout' %}" class="menu-btn-a"><div class="menu-btn">log out</div></a>
 
      {% else %}
          <div class="user-authentication">
-         <a href="">
+         <a href="{% url 'login' %}">
              <div class="user-authentication-btn user-authentication-btn-login">
                  Log in
              </div>
          </a>
-         <a href="">
+         <a href="{% url 'register' %}">
              <div class="user-authentication-btn user-authentication-btn-signup">
                  Sign up
              </div>

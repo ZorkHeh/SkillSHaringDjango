@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.urls import path
 
 from skill_sharing.views import index, articles
+from user.views import log_out, log_in, register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('articles', articles, name='articles'),
+    path('logout', log_out, name='logout'),
+    path('login', log_in, name='login'),
+    path('register', register, name='register'),
 
 ]
